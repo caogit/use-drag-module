@@ -10,6 +10,11 @@ const routes = [
     name: "Home",
     component: Home,
   },
+  {
+    path: "/refer",
+    name: "Refer",
+    component: () => import("../views/refer"),
+  },
 ];
 
 const router = new VueRouter({
