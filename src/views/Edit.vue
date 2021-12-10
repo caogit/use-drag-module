@@ -21,7 +21,7 @@ export default {
         2: "images",
         3: "swiper",
       },
-      processingRightData:{}
+      processingRightData:''
     };
   },
   props: ["rightData", "rIndex","typeId"],
@@ -29,7 +29,8 @@ export default {
     images,
     swiper,
   },
-  mounted() {
+  /* 这里必须使用created，不能使用mounted */
+  created() {
     this.changeRigthData(this.rightData)
   },
   methods: {
@@ -39,7 +40,7 @@ export default {
     },
     // 根据不同组件传不同的值
     changeRigthData(val){
-      console.log(1);
+         console.log("🚀 ~ file: Edit.vue ~ line 42 ~ changeRigthData ~ val", val)
          this.processingRightData = val
     },
     // 改变值的作用

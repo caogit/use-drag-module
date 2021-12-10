@@ -20,10 +20,13 @@ export default {
   props: {
     processingRightData: {
       type:[Array,Object] ,
-      
+      default:function(){
+        return []
+      }
     },
   },
   mounted(){
+  // this.imageFile = this.processingRightData
     // this.showImage()
   },  
   methods:{

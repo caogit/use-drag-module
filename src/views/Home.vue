@@ -58,7 +58,7 @@
           </draggable>
         </div>
         <div style="text-align:center">
-        <el-button>点击提交</el-button>
+        <el-button @click="submit">点击提交</el-button>
         </div>
       </section>
     </div>
@@ -97,9 +97,7 @@ export default {
           text: "图片",
           icon: "icon-caotupian",
           com: images,
-          r_data: {
-            url: "",
-          },
+          r_data: {},
         },
         {
           id: 3,
@@ -143,6 +141,10 @@ export default {
     },
     bog(evt) {},
     c_onEnd() {},
+    /* 提交 */
+    submit(){
+      console.log(this.view);
+    },
     /* 点击每一项 */
     checkModule(data,id, index) {
       // 这里的isRight用来控制右侧配置去的显示隐藏，保证每次组件都是销毁后重新创建的，这样每次都会触发组件的mounted
