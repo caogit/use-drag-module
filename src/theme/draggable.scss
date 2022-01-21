@@ -1,0 +1,62 @@
+/*左侧被拖拽对象的样式*/
+.item {
+  padding: 6px;
+  background-color: #fdfdfd;
+  border: solid 1px #eee;
+  margin-bottom: 10px;
+  cursor: move;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 中间样式 */
+.dragCeneter {
+  height: 100% ;
+  overflow-x: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar-thumb {
+    background: #dbdbdb;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f6f6f6;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  .viewItem {
+    transition: all 0.3s;
+    position: relative;
+    &:hover {
+      transform: scale(0.95);
+    }
+    &:hover .icon-com {
+      display: inline-block;
+    }
+    .icon-com {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
+}
+/*选中样式*/
+.chosen {
+  border: solid 2px #3089dc !important;
+}
+/* 设置拖动元素的占位符类名 */
+.ghost {
+  background-color: red;
+}
+/* 拖动的时候样式 */
+.dragClass {
+  opacity: 0.5 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background-image: none !important;
+}
